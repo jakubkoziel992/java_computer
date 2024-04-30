@@ -1,0 +1,4 @@
+
+Mouse connected
+Memory Stick connected
+Mouse disconnected

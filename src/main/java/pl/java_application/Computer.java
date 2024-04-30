@@ -5,6 +5,7 @@ import pl.java_application.drive.Drive;
 import pl.java_application.file.File;
 import pl.java_application.usbdevice.USBDevice;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,7 +49,7 @@ public class Computer {
         return usbDevices;
     }
 
-    public void addUSBDevice(USBDevice usbDevice){
+    public void addUSBDevice(USBDevice usbDevice) throws IOException {
         boolean isConnected = usbDevice.connect();
 
         if (isConnected){
@@ -58,7 +59,7 @@ public class Computer {
 
     }
 
-    public void removeUSBDevice(USBDevice usbDevice){
+    public void removeUSBDevice(USBDevice usbDevice) throws IOException {
         boolean isDisconnected = usbDevice.disconnect();
 
         if (!isDisconnected){

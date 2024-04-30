@@ -11,10 +11,14 @@ import pl.java_application.usbdevice.MemoryStick;
 import pl.java_application.usbdevice.Mouse;
 import pl.java_application.usbdevice.USBDevice;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Monitor monitor = new Monitor("Dell");
         Drive ssdDrive = new HDDDrive();
 
@@ -24,7 +28,7 @@ public class Main {
         Mouse mouse = new Mouse("Mysz");
         MemoryStick memoryStick = new MemoryStick("Pendrive");
 
-        // connect new devces
+        // connect new devices
         computer.addUSBDevice(mouse);
         computer.addUSBDevice(memoryStick);
 
